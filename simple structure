@@ -6,6 +6,7 @@ public function phone()
     return $this->hasOne(Phone::class);
 }
 
+
 // in Phone model
 public function user()
 {
