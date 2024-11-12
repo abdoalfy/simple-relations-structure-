@@ -1,0 +1,41 @@
+// ++++++++++++++++++++++++++++++++ One-to-One Relationship +++++++++++++++++++++++++++++++
+
+// in User model
+public function phone()
+{
+    return $this->hasOne(Phone::class);
+}
+
+// in Phone model
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
+// ++++++++++++++++++++++++++++++ One-to-Many Relationship ++++++++++++++++++++++++++++++
+
+// in Author model
+public function articles()
+{
+    return $this->hasMany(Article::class);
+}
+
+// in Article model
+public function author()
+{
+    return $this->belongsTo(Author::class);
+}
+
+// ++++++++++++++++++++++++++++ Many-to-Many Relationship +++++++++++++++++++++++++++
+
+// in Tag model
+public function posts()
+{
+    return $this->belongsToMany(Post::class);
+}
+
+// in Post model
+public function tags()
+{
+    return $this->belongsToMany(Tag::class);
+}
